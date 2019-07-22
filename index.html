@@ -9,6 +9,7 @@
     html, body{
       padding: 0;
       margin: 0;
+      user-select: none; 
     }
     html{
       height: 100%;
@@ -34,7 +35,6 @@
       display: flex;
       flex-direction: column;
       text-align: center;
-      
       font-weight: 100;
       cursor: default;
     }
@@ -56,7 +56,7 @@
       cursor: pointer;
     }
     a:hover {
-      color: rgb(255, 204, 0);
+      color: rgb(255, 176, 0);
     }
     .sign {
       display: flex;
@@ -66,31 +66,42 @@
     .hidden {
       display: none;
     }
+    .white { 
+      color: rgb(255, 255, 255);
+    }
+    #lightbulb {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+      top: 0px;
+    }
+
+    @media (max-width:400px) { 
+      body {
+        font-size: 0.75em;
+      }
+    }
   </style>
 </head>
 <!-- Drawing was really fun -->
 <body>
+    <div id="lightbulb"><pre>
+             _  
+Lights: Off (~) 
+             #  </pre></div>
   <section class="container" itemscope="" itemtype="https://schema.org/Person">
     <div class="card">
-      <span class="name" itemprop="name">Konrad Gryt</span><span itemprop="jobTitle">Software Developer<span class="underscore">_</span></span>
+      <span class="name" itemprop="name">Konrad Gryt</span><span itemprop="jobTitle">Software Developer</span>
     </div>
     <div class="sign">
         <br/>
-        <div id="cv">
-          <a rel="noreferrer" href="/cv.html">+----------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;CV&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+----------+</a>
-        </div>
-        <span class="hidden">konrad.gryt@gmail.com</span>
-        <div id="email" itemprop="email">
-          <a target="_blank" rel="noreferrer" href="mailto:konrad.gryt@gmail.com">+-------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+-------------+</a>
-        </div>
+        <span class="hidden" itemprop="email">konrad.gryt@gmail.com</span>
+        <a target="_blank" rel="noreferrer" href="mailto:konrad.gryt@gmail.com">+-------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;Send me an <span class="white">e-mail</span>&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+-------------------------+</a>
+        <a id="cv" rel="noreferrer" href="/cv.html">+----------------------------+<br/>|&nbsp;&nbsp;&nbsp; Have a look on my <span class="white">CV<span class="underscore">_</span></span> &nbsp;&nbsp;|<br/>+----------------------------+</a>
         <span class="hidden">https://github.com/konradgryt</span>
-        <div id="github">
-          <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">+----------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GitHub&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+----------------+</a>
-        </div>
+        <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">+-------------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My projects on <span class="white">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+-------------------------------+</a>
         <span class="hidden">https://www.linkedin.com/in/konrad-gryt-b68622174  </span>
-        <div id="linkedin">
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">+--------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LinkedIn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+--------------------+</a>
-        </div>
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">+----------------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My profile on <span class="white">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+----------------------------------+</a>
       </div>
   </section>
 </body>
