@@ -23,8 +23,8 @@
       height: max-content;
       
       font-family: 'Courier';
-      color: rgb(255, 255, 255);
-      background-color: rgb(20, 20, 20);
+      color: rgb(205, 205, 205);
+      background-color: rgb(5, 5, 5);
     }
     .container {
       display: flex;
@@ -70,13 +70,18 @@
       color: rgb(255, 255, 255);
     }
     #lightbulb {
-      position: absolute;
-      right: 10px;
       cursor: pointer;
-      top: 0px;
       color: rgb(150, 150, 150);
     }
-
+    .yellow {
+      color: rgb(255, 176, 0);
+    }
+    .amber {
+      color: rgb(255, 176, 0);
+    }
+    .extra {
+      display: none;
+    }
     @media (max-width:400px) { 
       body {
         font-size: 0.75em;
@@ -84,42 +89,73 @@
     }
   </style>
 </head>
-<!-- Drawing was really fun -->
+<!-- Drawing was really fun, but it was damn difficult to find a word with 'y' that would fit to the rest of the header -->
 <body>
-    <div id="lightbulb" class="off" onclick=light()><pre>
-             _  
-<span class="white">Lights:</span> Off (~)  
-             #  </pre></div>
   <section class="container" itemscope="" itemtype="https://schema.org/Person">
     <div class="card">
-      <span class="name" itemprop="name">Konrad Gryt</span><span itemprop="jobTitle">Software Developer</span>
+        <div id="lightbulb" class="off" onclick=light()><pre>
+            _  
+ <span class="white">Lights:</span> Off (~) <span class="underscore amber"><-</span>
+            #  </pre></div>
+      <span class="name" itemprop="name"><span class="extra yellow">Hello, I'm </span>Konrad<span class="extra yellow"> -</span> <span class="extra yellow"> a pro</span>Gr<span class="extra yellow">ammer</br>(m</span>y<span class="extra yellow">sterious compu</span>t<span class="extra yellow">er person)</span></span><span itemprop="jobTitle"><span class="extra yellow"><br/>
+        When on a lookout for </span>Software<span class="extra yellow">, Game or Web</span> Developer<span class="extra yellow">, please follow the sign:</span></span>
     </div>
     <div class="sign">
         <br/>
-        <span class="hidden" itemprop="email">konrad.gryt@gmail.com</span>
-        <a target="_blank" rel="noreferrer" href="mailto:konrad.gryt@gmail.com">+-------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;Send me an <span class="white">e-mail</span>&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+-------------------------+</a>
-        <a id="cv" rel="noreferrer" href="/cv.html">+----------------------------+<br/>|&nbsp;&nbsp;&nbsp; Have a look on my <span class="white">CV<span class="underscore">_</span></span> &nbsp;&nbsp;|<br/>+----------------------------+</a>
-        <span class="hidden">https://github.com/konradgryt</span>
-        <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">+-------------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My projects on <span class="white">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+-------------------------------+</a>
-        <span class="hidden">https://www.linkedin.com/in/konrad-gryt-b68622174  </span> 
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">+----------------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My profile on <span class="white">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+----------------------------------+</a>
+        <span class="extra amber" >...</span>
+        <span class="extra amber" >|||</span>
+        <a target="_blank" rel="noreferrer" href="mailto:konrad.gryt@gmail.com">
+          <span class="extra amber" >+</span>+-------------------------+<span class="extra amber" >\</span><br/>
+          <span class="extra amber" >|</span>|&nbsp;&nbsp;&nbsp;&nbsp;Send me an <span class="white">e-mail</span>&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >O</span><br/>
+          <span class="extra amber" >+</span>+-------------------------+<span class="extra amber" >/</span>
+        </a>
+        <span class="extra amber" >|||</span>
+        <a id="cv" rel="noreferrer" href="/cv.html">
+          <span class="extra amber" >+</span>+----------------------------+<span class="extra amber" >+</span><br/>
+          <span class="extra amber" >|</span>|&nbsp;&nbsp;&nbsp; Have a look at my <span class="amber">CV</span>&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >|</span><br/>
+          <span class="extra amber" >+</span>+----------------------------+<span class="extra amber" >+</span>
+        </a>
+        <span class="extra amber" >|||</span>
+        <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">
+          <span class="extra amber" >/</span>+-------------------------------+<span class="extra amber" >+</span><br/>
+          <span class="extra amber" >+</span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My projects on <span class="white">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >|</span><br/>
+          <span class="extra amber" >\</span>+-------------------------------+<span class="extra amber" >+</span>
+        </a>
+        <span class="extra amber" >|||</span>
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">
+          <span class="extra amber" >/</span>+----------------------------------+<span class="extra amber" >+</span><br/>
+          <span class="extra amber" >x</span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My profile on <span class="white">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >|</span><br/>
+          <span class="extra amber" >\</span>+----------------------------------+<span class="extra amber" >+</span>
+        </a>
+        <span class="extra amber" >|||</span>
+        <span class="extra amber" >|||</span>
+        <span class="extra amber" >xxx</span>
       </div>
   </section>
   <script>
-    function light() {
       var lightbulb = document.getElementById("lightbulb");
+      var extras = document.getElementsByClassName("extra");
+    function light() {
       if (lightbulb.classList.contains("off")) {
-        lightbulb.innerHTML = `<pre>
+        lightbulb.innerHTML = `<pre class="yellow">
            \\ _ /
-<span class="white">Lights:</span> On -(~)- 
+ <span class="white">Lights:</span> On -(~)- 
            / # \\</pre>`;
            lightbulb.classList.replace("off", "on");
+           for(var i = 0; i < extras.length; i++)
+            {
+             extras.item(i).style.display = "inline";
+            }
     } else {
       lightbulb.innerHTML = `<pre>
-             _  
-<span class="white">Lights:</span> Off (~)  
-             #  </pre>`;
+            _  
+ <span class="white">Lights:</span> Off (~) <span class="underscore amber"><-</span>
+            #  </pre>`;
            lightbulb.classList.replace("on", "off");
+           for(var i = 0; i < extras.length; i++)
+            {
+             extras.item(i).style.display = "none";
+            }
     }
       }
 
