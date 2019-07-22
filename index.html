@@ -74,6 +74,7 @@
       right: 10px;
       cursor: pointer;
       top: 0px;
+      color: rgb(150, 150, 150);
     }
 
     @media (max-width:400px) { 
@@ -85,9 +86,9 @@
 </head>
 <!-- Drawing was really fun -->
 <body>
-    <div id="lightbulb"><pre>
+    <div id="lightbulb" class="off" onclick=light()><pre>
              _  
-Lights: Off (~) 
+<span class="white">Lights:</span> Off (~)  
              #  </pre></div>
   <section class="container" itemscope="" itemtype="https://schema.org/Person">
     <div class="card">
@@ -100,9 +101,28 @@ Lights: Off (~)
         <a id="cv" rel="noreferrer" href="/cv.html">+----------------------------+<br/>|&nbsp;&nbsp;&nbsp; Have a look on my <span class="white">CV<span class="underscore">_</span></span> &nbsp;&nbsp;|<br/>+----------------------------+</a>
         <span class="hidden">https://github.com/konradgryt</span>
         <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">+-------------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My projects on <span class="white">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+-------------------------------+</a>
-        <span class="hidden">https://www.linkedin.com/in/konrad-gryt-b68622174  </span>
+        <span class="hidden">https://www.linkedin.com/in/konrad-gryt-b68622174  </span> 
         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">+----------------------------------+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My profile on <span class="white">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>+----------------------------------+</a>
       </div>
   </section>
+  <script>
+    function light() {
+      var lightbulb = document.getElementById("lightbulb");
+      if (lightbulb.classList.contains("off")) {
+        lightbulb.innerHTML = `<pre>
+           \\ _ /
+<span class="white">Lights:</span> On -(~)- 
+           / # \\</pre>`;
+           lightbulb.classList.replace("off", "on");
+    } else {
+      lightbulb.innerHTML = `<pre>
+             _  
+<span class="white">Lights:</span> Off (~)  
+             #  </pre>`;
+           lightbulb.classList.replace("on", "off");
+    }
+      }
+
+  </script>
 </body>
 </html>
