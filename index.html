@@ -87,6 +87,11 @@
         font-size: 0.75em;
       }
     }
+    @media (max-width:300px) { 
+      body {
+        font-size: 0.50em;
+      }
+    }
   </style>
 </head>
 <!-- Drawing was really fun, but it was damn difficult to find a word with 'y' that would fit to the rest of the header -->
@@ -97,65 +102,67 @@
             _  
  <span class="white">Lights:</span> Off (~) <span class="underscore amber"><-</span>
             #  </pre></div>
-      <span class="name" itemprop="name"><span class="extra yellow">Hello, I'm </span>Konrad<span class="extra yellow"> -</span> <span class="extra yellow"> a pro</span>Gr<span class="extra yellow">ammer</br>(m</span>y<span class="extra yellow">sterious compu</span>t<span class="extra yellow">er person)</span></span><span itemprop="jobTitle"><span class="extra yellow"><br/>
-        When on a lookout for </span>Software<span class="extra yellow">, Game or Web</span> Developer<span class="extra yellow">, please follow the sign:</span></span>
+      <span class="name" itemprop="name"><span class="extra amber" >Hi! I'm </span>Konrad<span class="extra amber" > -</span><span class="oldies"> Gryt</span></span><br/>
+      <span><span class="extra yellow">Game, s</span><span class="oldies">S</span>oftware <span class="extra yellow"> and web d</span><span class="oldies">D</span>eveloper<span class="extra yellow"></span>
     </div>
     <div class="sign">
         <br/>
-        <span class="extra amber" >...</span>
-        <span class="extra amber" >|||</span>
         <a target="_blank" rel="noreferrer" href="mailto:konrad.gryt@gmail.com">
           <span class="extra amber" >+</span>+-------------------------+<span class="extra amber" >\</span><br/>
           <span class="extra amber" >|</span>|&nbsp;&nbsp;&nbsp;&nbsp;Send me an <span class="white">e-mail</span>&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >O</span><br/>
           <span class="extra amber" >+</span>+-------------------------+<span class="extra amber" >/</span>
         </a>
-        <span class="extra amber" >|||</span>
         <a id="cv" rel="noreferrer" href="/cv.html">
           <span class="extra amber" >+</span>+----------------------------+<span class="extra amber" >+</span><br/>
           <span class="extra amber" >|</span>|&nbsp;&nbsp;&nbsp; Have a look at my <span class="amber">CV</span>&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >|</span><br/>
           <span class="extra amber" >+</span>+----------------------------+<span class="extra amber" >+</span>
         </a>
-        <span class="extra amber" >|||</span>
         <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">
           <span class="extra amber" >/</span>+-------------------------------+<span class="extra amber" >+</span><br/>
           <span class="extra amber" >+</span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My projects on <span class="white">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >|</span><br/>
           <span class="extra amber" >\</span>+-------------------------------+<span class="extra amber" >+</span>
         </a>
-        <span class="extra amber" >|||</span>
         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">
           <span class="extra amber" >/</span>+----------------------------------+<span class="extra amber" >+</span><br/>
           <span class="extra amber" >x</span>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My profile on <span class="white">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<span class="extra amber" >|</span><br/>
           <span class="extra amber" >\</span>+----------------------------------+<span class="extra amber" >+</span>
         </a>
-        <span class="extra amber" >|||</span>
-        <span class="extra amber" >|||</span>
-        <span class="extra amber" >xxx</span>
       </div>
   </section>
   <script>
-      var lightbulb = document.getElementById("lightbulb");
-      var extras = document.getElementsByClassName("extra");
+    var lightbulb = document.getElementById("lightbulb");
+    var extras = document.getElementsByClassName("extra");
+    var oldies = document.getElementsByClassName("oldies");
+
     function light() {
       if (lightbulb.classList.contains("off")) {
         lightbulb.innerHTML = `<pre class="yellow">
            \\ _ /
  <span class="white">Lights:</span> On -(~)- 
            / # \\</pre>`;
-           lightbulb.classList.replace("off", "on");
-           for(var i = 0; i < extras.length; i++)
-            {
-             extras.item(i).style.display = "inline";
-            }
+      lightbulb.classList.replace("off", "on");
+      for(var i = 0; i < extras.length; i++)
+      {
+        extras.item(i).style.display = "inline";
+      }
+      for(var i = 0; i < oldies.length; i++)
+      {
+        oldies.item(i).style.display = "none";
+      }
     } else {
       lightbulb.innerHTML = `<pre>
             _  
  <span class="white">Lights:</span> Off (~) <span class="underscore amber"><-</span>
             #  </pre>`;
-           lightbulb.classList.replace("on", "off");
-           for(var i = 0; i < extras.length; i++)
-            {
-             extras.item(i).style.display = "none";
-            }
+      lightbulb.classList.replace("on", "off");
+      for(var i = 0; i < extras.length; i++)
+      {
+        extras.item(i).style.display = "none";
+      }
+      for(var i = 0; i < oldies.length; i++)
+      {
+        oldies.item(i).style.display = "inline";
+      }
     }
       }
 
