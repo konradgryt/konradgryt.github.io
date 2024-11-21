@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>konradgryt | Konrad Gryt</title>
+  <style>
+    html, body{
+      padding: 0;
+      margin: 0;
+      user-select: none; 
+    }
+    html{
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 100%;
+      height: max-content;
+      
+      font-family: 'Courier';
+      color: rgb(205, 205, 205);
+      background-color: rgb(5, 5, 5);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }    
+    .bottom {
+      position: fixed;
+      bottom:0;
+      margin: 16px;
+    }    
+    .card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-weight: 100;
+      cursor: default;
+    }
+    .name {
+      font-size:3em;
+    }
+    .underscore {
+      animation: blinker 1.2s infinite;
+    }
+    .underscore-alt {
+      animation: alt-blinker 1.2s infinite;
+    }
+    @keyframes blinker {
+      0%   { opacity: 1; }
+      49%  { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes alt-blinker {
+      0%   { opacity: 0; }
+      49%  { opacity: 0; }
+      50%  { opacity: 1; }
+      100% { opacity: 1; }
+    }
+    a {
+      text-decoration: none;
+      color: rgb(150, 150, 150);
+      cursor: pointer;
+    }
+    a:hover {
+      color: rgb(255, 176, 0);
+    }
+    .sign {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .white { 
+      color: rgb(255, 255, 255);
+    }
+    #lightbulb {
+      cursor: pointer;
+      color: rgb(150, 150, 150);
+    }
+    .amber {
+      color: rgb(255, 176, 0);
+    }
+    .hemo {
+      color: #dc143c
+    }
+    .dg {
+      color: #48b9ba
+    }
+    .extra {
+      display: none;
+    }
+    @media (max-width:400px) { 
+      body {
+        font-size: 0.75em;
+      }
+    }
+
+  </style>
+</head>
+<!-- I made this "cv-ish" website forever ago. It's a mess but does the trick -->
+<body>
+  <section class="container">
+    <div class="card">
+        <div id="lightbulb" class="off" onclick=light()><pre>
+          _  
+ show plan (~) <span class="underscore amber"><-</span>
+          #  </pre></div>
+      <span class="name">konradgryt</span>
+      <span class="extra" >job -> <a target="_blank" href="https://digitalguest.com/">CTO & Partner @DigitalGuest</a> <span class="underscore dg"><-</span></span>
+      <span class="extra" >other stuff -> <a target="_blank" rel="noreferrer" href="https://konradgryt.itch.io">Building Hemomancer</a> <span class="underscore-alt hemo"><-</span></span>
+    </div>
+    <div class="sign">
+        <span class="extra amber" ><br/></span>
+        <span class="extra amber" >Programs will appear there<br/></span>
+        <a target="_blank" rel="noreferrer" href="https://konradgryt.itch.io/">
+          +-------------------------------+<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My <span class="white">itch.io</span> profle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+          +-------------------------------+
+        </a>
+        <span class="extra amber" ><br/>Project graveyard and hosting this page<br/></span>
+        <a target="_blank" rel="noreferrer" href="https://github.com/konradgryt">
+          +-------------------------------+<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My <span class="white">github.com</span> profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+          +-------------------------------+
+        </a>
+        <span class="extra amber" ><br/>Website with people in the internet<br/></span>
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/konrad-gryt-b68622174/">
+          +-------------------------------+<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;My <span class="white">linkedin.com</span> profile&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+          +-------------------------------+
+        </a>
+        <span class="extra amber" ><br/>Videos will appear there<br/></span>
+        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/@KonradGryt">
+          +-------------------------------+<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My <span class="white">youtube.com</span> channel&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+          +-------------------------------+
+        </a>
+    </div>
+    <br/>
+  </section>
+  <script>
+      var lightbulb = document.getElementById("lightbulb");
+      var extras = document.getElementsByClassName("extra");
+    function light() {
+      if (lightbulb.classList.contains("off")) {
+        lightbulb.innerHTML = `<pre class="amber">
+          \\ _ /
+ hide plan -(~)- 
+          / # \\</pre>`;
+           lightbulb.classList.replace("off", "on");
+           for(var i = 0; i < extras.length; i++)
+            {
+             extras.item(i).style.display = "inline";
+            }
+    } else {
+      lightbulb.innerHTML = `<pre>
+          _  
+ show plan (~) <span class="underscore amber"><-</span>
+          #  </pre>`;
+           lightbulb.classList.replace("on", "off");
+           for(var i = 0; i < extras.length; i++)
+            {
+             extras.item(i).style.display = "none";
+            }
+    }
+      }
+
+  </script>
+  <div class="bottom">
+    Commercial use of my intellectual property without permission is forbidden. All rights reserved.
+  </div>
+</body>
+</html>
